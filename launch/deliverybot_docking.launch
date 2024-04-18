@@ -1,0 +1,11 @@
+<launch>
+
+    <arg name="center_tf" default="center"/>
+    
+    <!-- lingao base_driver -->
+    <node pkg="deliverybot_docking" name="center_tf_publisher" type="center_tf_publisher" output="screen">
+        <param name="center_tf" value="$(arg center_tf)" />
+    
+    </node>
+
+</launch>
