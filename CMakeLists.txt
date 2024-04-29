@@ -27,7 +27,7 @@ include_directories(
 )
 
 
-add_executable(center_tf_publisher src/center_tf_publisher.cpp)
-target_link_libraries(center_tf_publisher
+add_executable(tko_center_tf_publisher src/center_tf_publisher.cpp)
+target_link_libraries(tko_center_tf_publisher
  ${catkin_LIBRARIES}
 )
