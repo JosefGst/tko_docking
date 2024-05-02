@@ -1,0 +1,26 @@
+scan_filter_chain:
+- name: box_filter
+  type: laser_filters/LaserScanBoxFilter
+  params:
+    box_frame: map
+    max_x: 0.5
+    max_y: 3.0
+    max_z: 2.0
+    min_x: -0.5
+    min_y: -3.0
+    min_z: -0.28
+    invert: true
+- name: speckle_filter
+  type: laser_filters/LaserScanSpeckleFilter
+  params:
+    filter_type: 0
+    max_range: 2.0
+    max_range_difference: 0.01
+    filter_window: 2
+# - name: shadows
+#   type: laser_filters/ScanShadowsFilter
+#   params:
+#     min_angle: 10
+#     max_angle: 170
+#     neighbors: 20
+#     window: 1

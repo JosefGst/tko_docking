@@ -1,0 +1,9 @@
+<launch>
+<arg name="ns" default="olei" />
+<arg name="config" default="box_filter" />
+<arg name="scan_topic" default="/olei/scan" />
+<node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="$(arg ns)_laser_filter" ns="$(arg ns)">
+      <remap from="scan" to="$(arg scan_topic)" />
+      <rosparam command="load" file="$(find tko_docking)/config/$(arg config).yaml" />
+</node>
+</launch>
