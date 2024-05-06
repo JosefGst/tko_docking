@@ -2,8 +2,10 @@
 <launch>
 
     <remap from="cloud_in" to="/olei_points"/>
-    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" ns="olei"/>
-    <include file="$(find tko_docking)/launch/box_filter.launch" />
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" ns="olei">
+        <param name="min_height" value="0.2"/>
+    </node>
+    <!-- <include file="$(find tko_docking)/launch/box_filter.launch" /> -->
     <include file="$(find tko_docking)/launch/laser_line_extraction.launch" />
     <node pkg="corner_detection" type="corner_detection_node" name="corner_detection_node" />
     <include file="$(find lift_tf_pub)/launch/lift_tf_pub.launch" >
